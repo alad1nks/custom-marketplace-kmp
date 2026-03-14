@@ -1,6 +1,6 @@
 package com.alad1nks.custommarketplace
 
-class JsPlatform: Platform {
+class JsPlatform : Platform {
     override val name: String = "Web with Kotlin/JS"
 }
 
