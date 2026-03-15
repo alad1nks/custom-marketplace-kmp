@@ -1,3 +1,4 @@
 <resources>
     <string name="home_tab_label">Home</string>
+    <string name="collections_tab_label">Collections</string>
 </resources>

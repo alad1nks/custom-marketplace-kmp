@@ -5,6 +5,7 @@ import androidx.compose.animation.ExitTransition
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.compose.NavHost
+import com.alad1nks.custommarketplace.feature.collections.navigation.collectionsScreen
 import com.alad1nks.custommarketplace.feature.home.navigation.HomeRoute
 import com.alad1nks.custommarketplace.feature.home.navigation.homeScreen
 import com.alad1nks.custommarketplace.ui.AppState
@@ -25,5 +26,6 @@ internal fun AppNavHost(
         exitTransition = { ExitTransition.None },
     ) {
         homeScreen()
+        collectionsScreen()
     }
 }
