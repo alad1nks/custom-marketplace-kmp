@@ -8,8 +8,10 @@ import androidx.navigation.NavHostController
 import androidx.navigation.NavOptionsBuilder
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
+import com.alad1nks.custommarketplace.feature.collections.navigation.navigateToCollections
 import com.alad1nks.custommarketplace.feature.home.navigation.navigateToHome
 import com.alad1nks.custommarketplace.navigation.AppTopLevelDestination
+import com.alad1nks.custommarketplace.navigation.AppTopLevelDestination.COLLECTIONS
 import com.alad1nks.custommarketplace.navigation.AppTopLevelDestination.HOME
 import com.alad1nks.custommarketplace.navigation.routeSerialName
 
@@ -50,6 +52,7 @@ internal class AppState(
 
         when (appTopLevelDestination) {
             HOME -> navController.navigateToHome(topLevelNavOptions)
+            COLLECTIONS -> navController.navigateToCollections(topLevelNavOptions)
         }
     }
 }
