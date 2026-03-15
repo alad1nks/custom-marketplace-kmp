@@ -33,4 +33,6 @@ plugins {
 }
 
 include(":composeApp")
+include(":core:navigation")
 include(":feature:home")
+include(":resources")
