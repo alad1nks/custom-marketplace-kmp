@@ -20,6 +20,10 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
+      - name: Decode Firebase config
+        run: |
+          echo "${{ secrets.FIREBASE_CONFIG_ANDROID }}" | base64 -d > composeApp/google-services.json
+
       - name: Build Android
         run: ./gradlew assembleDebug
 
@@ -38,6 +42,10 @@ jobs:
       - name: Make gradlew executable
         run: chmod +x ./gradlew
 
+      - name: Decode Firebase config
+        run: |
+          echo "${{ secrets.FIREBASE_CONFIG_IOS }}" | base64 -d > iosApp/iosApp/GoogleService-Info.plist
+
       - name: Build iOS
         run: ./gradlew linkReleaseFrameworkIosArm64
 
@@ -55,6 +63,10 @@ jobs:
 
       - name: Make gradlew executable
         run: chmod +x ./gradlew
+
+      - name: Decode Firebase config
+        run: |
+          echo "${{ secrets.FIREBASE_CONFIG_JS }}" | base64 -d > composeApp/src/jsMain/resources/firebaseConfig.js
 
       - name: Build js
         run: ./gradlew jsBrowserProductionWebpack
