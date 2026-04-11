@@ -7,6 +7,7 @@ plugins {
     alias(libs.plugins.composeMultiplatform)
     alias(libs.plugins.composeCompiler)
     alias(libs.plugins.composeHotReload)
+    alias(libs.plugins.google.services)
     alias(libs.plugins.kotlinxSerialization)
 }
 
@@ -54,19 +55,23 @@ kotlin {
             implementation(libs.koin.compose.viewmodel)
             implementation(libs.kotlinx.serialization.json)
             implementation(libs.navigation.compose)
-            implementation(project.dependencies.platform(libs.koin.bom))
 
+            implementation(projects.core.data)
+            implementation(projects.core.domain)
+            implementation(projects.core.firebase)
             implementation(projects.core.navigation)
             implementation(projects.feature.collections)
             implementation(projects.feature.home)
             implementation(projects.resources)
+
+            implementation(project.dependencies.platform(libs.koin.bom))
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
         jvmMain.dependencies {
             implementation(compose.desktop.currentOs)
-            implementation(libs.kotlinx.coroutinesSwing)
+            implementation(libs.kotlinx.coroutines.swing)
         }
     }
 }

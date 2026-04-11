@@ -41,6 +41,7 @@ kotlin {
             implementation(libs.koin.compose.viewmodel)
             implementation(libs.kotlinx.serialization.json)
             implementation(libs.navigation.compose)
+
             implementation(project.dependencies.platform(libs.koin.bom))
 
             implementation(projects.core.navigation)

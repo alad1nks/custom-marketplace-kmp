@@ -25,6 +25,10 @@ jobs:
       - name: Run local tests
         run: ./gradlew test
 
+      - name: Decode Firebase config
+        run: |
+          echo "${{ secrets.FIREBASE_CONFIG_ANDROID }}" | base64 -d > composeApp/google-services.json
+
       - name: Decode Keystore
         run: |
           echo "${{ secrets.KEYSTORE_BASE64 }}" | base64 -d > custommarketplace-release-key.jks

@@ -33,6 +33,9 @@ plugins {
 }
 
 include(":composeApp")
+include(":core:data")
+include(":core:domain")
+include(":core:firebase")
 include(":core:navigation")
 include(":feature:collections")
 include(":feature:home")
