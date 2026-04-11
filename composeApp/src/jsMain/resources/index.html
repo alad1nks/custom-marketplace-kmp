@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Custom Marketplace</title>
     <link type="text/css" rel="stylesheet" href="styles.css">
+
+    <script type="module">
+        import { firebaseConfig } from './firebaseConfig.js';
+        window.firebaseConfig = firebaseConfig;
+    </script>
+
     <script type="application/javascript" src="composeApp.js"></script>
 </head>
 <body>
